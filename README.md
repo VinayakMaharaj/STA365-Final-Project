@@ -32,5 +32,5 @@ GAME_SHOTS_TAKEN: Number of total shots taken by player in that game
 SHOT_STREAK: Streak of shots made consecutively (including the current shot)
 HOT_HAND_SHOT_STREAK2: Do they have a streak of at least 2 shots before the current one?
 HOT_HAND_SHOT_STREAK3: Do they have a streak of at least 3 shots before the current one?
-GAME_TIME_ELAPSED: number of minutes played in the game thus far (minutes)
+GAME_TIME_ELAPSED: number of minutes played in the game thus far (in decimal form)
 
