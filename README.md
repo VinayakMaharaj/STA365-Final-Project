@@ -1,7 +1,7 @@
-In this project, we aim to analyze the "Hot Hand Fallacy" in basketballl using Bayesian inference.\\
+In this project, we aim to analyze the "Hot Hand Fallacy" in basketballl using Bayesian inference.\
 
 Dataset originally taken from: https://www.kaggle.com/datasets/dansbecker/nba-shot-logs\
-We have slightly modified this in shot_logs_final_v1.csv and shot_logs_final_v2.csv (variables for v2 explained below).\\
+We have slightly modified this in shot_logs_final_v1.csv and shot_logs_final_v2.csv (variables for v2 explained below).\
 
 
 GAME_ID: A unique ID for that game\
@@ -32,5 +32,5 @@ GAME_SHOTS_TAKEN: Number of total shots taken by player in that game\
 SHOT_STREAK: Streak of shots made consecutively (including the current shot)\
 HOT_HAND_SHOT_STREAK2: Do they have a streak of at least 2 shots before the current one?\
 HOT_HAND_SHOT_STREAK3: Do they have a streak of at least 3 shots before the current one?\
-GAME_TIME_ELAPSED: number of minutes played in the game thus far (in decimal form)\
+GAME_TIME_ELAPSED: number of minutes played in the game thus far (in decimal form)
 
