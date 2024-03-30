@@ -5,7 +5,7 @@ import pandas as pd
 
 
 if __name__ == "__main__":
-    ten_fga_df = pd.read_csv("C:\\Users\\kusha\\OneDrive\\Desktop\\Uni\\Winter_2024\\STA365\\STA365-Final-Project\\data_files\\players_are_filtered.csv")
+    ten_fga_df = pd.read_csv("C:\\Users\\kusha\\OneDrive\\Desktop\\Uni\\Winter_2024\\STA365\\STA365-Final-Project\\data_files\\fga_filter.csv")
     # keys = players, values = [num hot hand, num not hot hand]
     players = ten_fga_df["player_name"]
     player_dict = {}
