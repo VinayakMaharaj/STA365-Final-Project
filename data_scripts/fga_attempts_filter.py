@@ -12,11 +12,7 @@ if __name__ == '__main__':
     fga_set = set()
     weird_names = []
     
-    for player in players:
-        if '?' in player:
-            weird_names.append(player)
-        else:
-            fga_set.add(player)
+
     
     row_ind = []
     bool_dict = {}
