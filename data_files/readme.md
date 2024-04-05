@@ -1,26 +1,28 @@
 This file explains in detail how we started from the original kaggle dataset to the dataset that was used in the final analysis.
 
+### Data Files
+**The data file used in the analysis, "hhs_filter.csv", is merely a transformed version of the two datasets mentioned below**. This section explains exactly how we created this file:
 
-The dataset was originally taken from [Kaggle](https://www.kaggle.com/datasets/dansbecker/nba-shot-logs), saved as "shot_logs.csv". 
-
-We made the following changes and saved it as "shot_logs_final_v2.csv":
+The dataset was originally taken from [Kaggle](https://www.kaggle.com/datasets/dansbecker/nba-shot-logs), saved as "shot_logs.csv". We made the following changes and saved it as "shot_logs_final_v2.csv":
 - Deleted columns "MATCHUP", "W", "FINAL_MARGIN", "SHOT_RESULT", "TOUCH TIME", "CLOSEST_DEFENDER_PLAYER_ID", "PTS", 
 - Added columns "DEFENDER_HEIGHT_CM", "DEFENDER_WEIGHT_KG", "PLAYER_HEIGHT", "PLAYER_WEIGHT", from [here]("https://www.kaggle.com/datasets/justinas/nba-players-data")
 - added columns "GAME_HALF", "GAME_CLOCK_DECIMAL"
-- Added indicator variables and helper variables for sorting
+- Added indicator variables and helper variables for sorting (these were removed anyway).
 - Added a column to index our shots starting at 0
 - Calculated the total shots taken that game for each player, added as "GAME_SHOTS_TAKEN"
 - Calculated the total shots taken that season for each player, added as "SEASON_SHOTS_TAKEN"
 - reformatted values of "CLOSEST_DEFENDER" and renamed to "REFORMATED_DEF_NAME"
-- Added column "GAME_TIME_ELAPSED" using 'data_scripts/game_time_elapsed.py'
+- Added column "GAME_TIME_ELAPSED" using 'game_time_elapsed.py' from 'data_scripts'
 - Added columns "SHOT_STREAK", "HOT_HAND_SHOT_STREAK2", "HOT_HAND_SHOT_STREAK3"
+
+Other data files are simply variations of the same file. The only significant changes that were made were sorting to make python scripts run faster, and filtering out players who averaged less than 10 field goal attempts a game. This initial filter was quickly made irrelevant since we later decided to only include shots from players who took the most shots on a hot hand (we call these "hot hand shots", or "HHS"). To do this, the script "total_hhs_data.py" was used to calculate total number of hot hand shots for each player, and the columns "num_HHS" and "num_not_HHS" were added and saved to "num_hhs_sort.csv". Once this file was sorted by "num_HHS", we used "hhs_filter.py" to only keep shots from 15 players that had the most HHS and saved this to 'hhs_filter.csv'. The original sorting used in "shot_logs_final_v2.csv" was restored.
+
+In short, we only introduced new data from the two links given above, ALL other variables were calculated manually from the existing data in either Excel or Python (see python scripts in 'data_scripts').
 
 
 ### List of All Variables
 
-Here is a list of all the variables that were ever saved in a data file over the course of this project. 
-
- Any other variables not found from the two given links were calculated manually by iterating over the data set (again, scripts can be found in the "data_scripts" folder). 
+Here is a list of all the variables that were used over the course of this project. Any other variables not found from the two given links were calculated manually by iterating over the data set (again, scripts can be found in the "data_scripts" folder). 
 
 - **GAME_ID**: A unique ID for that game.
 - **LOCATION**: Is the game being played at that player's team's arena (home), or in the other team's arena (Away)? "H" for home, "A" for away.
@@ -29,7 +31,7 @@ Here is a list of all the variables that were ever saved in a data file over the
 - **GAME_HALF**: 1 if first half (first two periods), 2 if second half (third period or later).
 - **GAME_CLOCK**: Time left in the period (minutes and seconds). There are 12 minutes in a regular period, 5 minutes in overtime periods.
 - **GAME_CLOCK_DECIMAL**: Time left in the period (minutes).
-- **SHOT_CLOCK**: Time left in the shot clock (each team has a maximum of 24 seconds to score in a possession).
+- **SHOT_CLOCK**: Time left in the shot clock (each team has a maximum of 24 seconds to score in a possession). Filled in missing data with GAME_CLOCK_DECIMAL values since they corresponded to new possessions with less than 24 seconds remaining in the quarter. 
 - **DRIBBLES**: Number of dribbles taken by that player.
 - **SHOT_DIST**: Distance from basket when shooting in feet.
 - **PTS_TYPE**: 2 pointer or 3 pointer.
