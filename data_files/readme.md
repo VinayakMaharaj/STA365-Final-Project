@@ -1,4 +1,4 @@
-This file explains in detail how we started from the original kaggle dataset to the dataset that was used in the final analysis.
+This file explains our data files and scripts in detail. For list of all variables, see below.
 
 ### Data Files
 **The data file used in the analysis, "hhs_filter.csv", is merely a transformed version of the two datasets mentioned below**. This section explains exactly how we created this file:
