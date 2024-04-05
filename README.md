@@ -1,6 +1,6 @@
 # Hot Hand Fallacy Analysis Using Bayesian Inference
 
-In this project, we aim to analyze the "Hot Hand Fallacy" in basketball using Bayesian inference. This file the variables we used in our analysis. The dataset was originally taken from [Kaggle](https://www.kaggle.com/datasets/dansbecker/nba-shot-logs). We added additional data from [another Kaggle dataset](https://www.kaggle.com/datasets/dansbecker/nba-shot-logs). It details every single shot taken by NBA players in the 2014-15 season until March 04, 2015. We added extra variables that were calculated by iterating over this dataset (for full explanation, see 'data_scripts/readme.md').
+In this project, we aim to analyze the "Hot Hand Fallacy" in basketball using Bayesian inference. This file the variables we used in our analysis. The dataset was originally taken from [Kaggle](https://www.kaggle.com/datasets/dansbecker/nba-shot-logs). It details every single shot taken by NBA players in the 2014-15 season until March 04, 2015. We added additional data from [another Kaggle dataset](https://www.kaggle.com/datasets/dansbecker/nba-shot-logs). We added extra variables that were calculated by iterating over this dataset (for full explanation, see 'data_scripts/readme.md').
 
 ### List of Variables Used in Analysis
 
