@@ -3,9 +3,9 @@ This file explains our data files and scripts in detail. For list of all variabl
 ### Data Files
 **The data file used in the analysis, "hhs_filter.csv", is merely a transformed version of the two datasets mentioned below**. This section explains exactly how we created this file:
 
-The dataset was originally taken from [Kaggle](https://www.kaggle.com/datasets/dansbecker/nba-shot-logs), saved as "shot_logs.csv". We made the following changes and saved it as "shot_logs_final_v2.csv":
+The dataset was originally taken from [Kaggle](https://www.kaggle.com/datasets/dansbecker/nba-shot-logs), saved as "shot_logs.csv". We made the following changes and saved it as "shot_logs_final_v2.csv" (some variables added from [here](https://www.kaggle.com/datasets/justinas/nba-players-data)):
 - Deleted columns "MATCHUP", "W", "FINAL_MARGIN", "SHOT_RESULT", "TOUCH TIME", "CLOSEST_DEFENDER_PLAYER_ID", "PTS", 
-- Added columns "DEFENDER_HEIGHT_CM", "DEFENDER_WEIGHT_KG", "PLAYER_HEIGHT", "PLAYER_WEIGHT", from [here]("https://www.kaggle.com/datasets/justinas/nba-players-data")
+- Added columns "DEFENDER_HEIGHT_CM", "DEFENDER_WEIGHT_KG", "PLAYER_HEIGHT", "PLAYER_WEIGHT", from the second data set
 - added columns "GAME_HALF", "GAME_CLOCK_DECIMAL"
 - Added indicator variables and helper variables for sorting (these were removed anyway).
 - Added a column to index our shots starting at 0
