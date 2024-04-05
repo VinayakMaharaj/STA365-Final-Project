@@ -1,13 +1,26 @@
 This file explains in detail how we started from the original kaggle dataset to the dataset that was used in the final analysis.
 
 
-The dataset was originally taken from [Kaggle](https://www.kaggle.com/datasets/dansbecker/nba-shot-logs) and saved as "shot_logs.csv". We created a duplicate of this file named "shot_logs_final_v1.csv"
+The dataset was originally taken from [Kaggle](https://www.kaggle.com/datasets/dansbecker/nba-shot-logs), saved as "shot_logs.csv". 
 
+We made the following changes and saved it as "shot_logs_final_v2.csv":
+- Deleted columns "MATCHUP", "W", "FINAL_MARGIN", "SHOT_RESULT", "TOUCH TIME", "CLOSEST_DEFENDER_PLAYER_ID", "PTS", 
+- Added columns "DEFENDER_HEIGHT_CM", "DEFENDER_WEIGHT_KG", "PLAYER_HEIGHT", "PLAYER_WEIGHT", from [here]("https://www.kaggle.com/datasets/justinas/nba-players-data")
+- added columns "GAME_HALF", "GAME_CLOCK_DECIMAL"
+- Added indicator variables and helper variables for sorting
+- Added a column to index our shots starting at 0
+- Calculated the total shots taken that game for each player, added as "GAME_SHOTS_TAKEN"
+- Calculated the total shots taken that season for each player, added as "SEASON_SHOTS_TAKEN"
+- reformatted values of "CLOSEST_DEFENDER" and renamed to "REFORMATED_DEF_NAME"
+- Added column "GAME_TIME_ELAPSED" using 'data_scripts/game_time_elapsed.py'
+- Added columns "SHOT_STREAK", "HOT_HAND_SHOT_STREAK2", "HOT_HAND_SHOT_STREAK3"
 
 
 ### List of All Variables
 
-Here is a list of all the variables that were ever saved in a data file over the course of this project. **SEASON_SHOTS_TAKEN** was extracted from this [dataset](https://stathead.com/tiny/ikyTe) for filtering purposes, but was abandoned soon after. Any other variables not found from the two given links were calculated manually by iterating over the data set (again, scripts can be found in the "data_scripts" folder). 
+Here is a list of all the variables that were ever saved in a data file over the course of this project. 
+
+ Any other variables not found from the two given links were calculated manually by iterating over the data set (again, scripts can be found in the "data_scripts" folder). 
 
 - **GAME_ID**: A unique ID for that game.
 - **LOCATION**: Is the game being played at that player's team's arena (home), or in the other team's arena (Away)? "H" for home, "A" for away.
